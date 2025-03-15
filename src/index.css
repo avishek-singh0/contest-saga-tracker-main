@@ -1,0 +1,147 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 220 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 20% 15%;
+
+    --primary: 222 75% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 25% 95%;
+    --secondary-foreground: 222 20% 15%;
+
+    --muted: 215 16% 90%;
+    --muted-foreground: 217 15% 50%;
+
+    --accent: 222 75% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 75% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 240 6% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 5% 96%;
+    --sidebar-accent-foreground: 240 6% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 222 25% 12%;
+    --foreground: 210 40% 95%;
+
+    --card: 222 25% 15%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 222 25% 15%;
+    --popover-foreground: 210 40% 95%;
+
+    --primary: 222 75% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 33% 20%;
+    --secondary-foreground: 210 40% 95%;
+
+    --muted: 217 33% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 75% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 222 75% 60%;
+
+    --sidebar-background: 240 6% 10%;
+    --sidebar-foreground: 240 5% 96%;
+    --sidebar-primary: 224 76% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4% 16%;
+    --sidebar-accent-foreground: 240 5% 96%;
+    --sidebar-border: 240 4% 16%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/90 dark:bg-black/80 backdrop-blur-lg border border-white/20 dark:border-white/10 shadow-lg;
+  }
+  
+  .glass-input {
+    @apply bg-white/50 dark:bg-black/50 backdrop-blur-md border border-white/30 dark:border-white/10 focus:ring-2 focus:ring-primary/30 transition-all duration-200;
+  }
+  
+  .badge {
+    @apply rounded-full px-2.5 py-0.5 text-xs font-semibold transition-all duration-200;
+  }
+
+  .badge-codeforces {
+    @apply bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300;
+  }
+
+  .badge-codechef {
+    @apply bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300;
+  }
+
+  .badge-leetcode {
+    @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300;
+  }
+  
+  .contest-card {
+    @apply bg-white dark:bg-black/40 rounded-xl p-5 border border-gray-100 dark:border-gray-800 
+    shadow-sm hover:shadow-md transition-all duration-300 animate-scale-in;
+  }
+  
+  .page-transition {
+    @apply animate-fade-in transition-all duration-500;
+  }
+  
+  .nav-item {
+    @apply px-3 py-2 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 
+    hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200;
+  }
+  
+  .nav-item-active {
+    @apply bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary-foreground;
+  }
+}
